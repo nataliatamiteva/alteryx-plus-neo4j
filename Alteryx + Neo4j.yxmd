@@ -1,0 +1,1659 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings>
+        <Position x="606" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Cast"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="978" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="actor_name" action="GroupBy" rename="actor_name" />
+            <SummarizeField field="title" action="CountDistinct" rename="num_of_appearances_in_top100_movies" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="966" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="title" action="GroupBy" rename="title" />
+            <SummarizeField field="year" action="GroupBy" rename="year" />
+            <SummarizeField field="rank" action="GroupBy" rename="rank" />
+            <SummarizeField field="rotten_tomatoes_score" action="GroupBy" rename="rotten_tomatoes_score" />
+            <SummarizeField field="critics_consensus" action="GroupBy" rename="critics_consensus" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="978" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="director_name" action="GroupBy" rename="director_name" />
+            <SummarizeField field="title" action="CountDistinct" rename="num_of_top100_movies_directed" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="246" y="90" width="144" height="48" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Input the file</Text>
+          <Font name="Arial" size="11.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="0" g="157" b="141" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="426" y="90" width="144" height="48" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Split the Cast column into rows</Text>
+          <Font name="Arial" size="11.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="155" g="176" b="88" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="450" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Cast</Field>
+          <Delimeters value="," />
+          <NumFields value="1" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="606" y="90" width="216" height="48" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Clean trailing white spaces and rename columns</Text>
+          <Font name="Arial" size="11.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="0" g="101" b="168" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="726" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Rank" selected="True" rename="rank" />
+            <SelectField field="Movie Title" selected="True" rename="title" />
+            <SelectField field="Year" selected="True" rename="year" />
+            <SelectField field="Score" selected="True" rename="rotten_tomatoes_score" />
+            <SelectField field="Director" selected="True" rename="director_name" />
+            <SelectField field="Cast" selected="True" rename="actor_name" />
+            <SelectField field="Critics Consensus" selected="True" rename="critics_consensus" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="858" y="90" width="312" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Create a unique list of actors and count distinct the num of top 100 movies they appear in, which will be added as a property to the Actor node in the graph</Text>
+          <Font name="Arial" size="11.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="226" g="95" b="69" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="858" y="306" width="312" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Group by title, year, rank, rotten tomatoes score, and critics consensus. The latter 4 will be added as properties of the Movie node</Text>
+          <Font name="Arial" size="11.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="226" g="95" b="69" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="858" y="546" width="312" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Create a unique list of directors and count distinct the num of top 100 movies they directed, which will be added as a property to the Director node</Text>
+          <Font name="Arial" size="11.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="226" g="95" b="69" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1397" y="293" width="206" height="205" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1422" y="342" width="156" height="48" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Create Director -&gt; Movie relationship</Text>
+              <Font name="Arial" size="11.25" style="1" />
+              <TextColor name="White" />
+              <FillColor r="0" g="157" b="141" />
+              <Shape shape="0" />
+              <Justification Justification="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="Neo4jOutput">
+            <Position x="1470" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON>{"ConnStr":"http://local:7474","Username":"neo4j","Password":"","Database":"","UrlCollapsed":false,"ExportObject":"Relationship","BatchSize":10000,"NodeLabel":"Director","NodeIdFields":[],"NodePropFields":["name","num_of_top100_movies_directed"],"RelLabel":"DIRECTED","RelIdFields":[],"RelPropFields":[],"RelLeftLabel":"Director","RelLeftFields":[{"director_name":"director_name"}],"RelRightLabel":"Movie","RelRightFields":[{"title":"title"}]}</JSON>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="graphyx.dll" EngineDllEntryPoint="Neo4jOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1181" y="293" width="194" height="205" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="10">
+          <GuiSettings Plugin="Neo4jOutput">
+            <Position x="1242" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON>{"ConnStr":"http://local:7474","Username":"neo4j","Password":"","Database":"","UrlCollapsed":false,"ExportObject":"Node","BatchSize":10000,"NodeLabel":"Movie","NodeIdFields":[],"NodePropFields":["title","year","rank","rotten_tomatoes_score","critics_consensus"],"RelLabel":"","RelIdFields":[],"RelPropFields":[],"RelLeftLabel":"","RelLeftFields":[],"RelRightLabel":"","RelRightFields":[]}</JSON>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="graphyx.dll" EngineDllEntryPoint="Neo4jOutput" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1206" y="342" width="144" height="48" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Create the Movie node</Text>
+              <Font name="Arial" size="11.25" style="1" />
+              <TextColor name="White" />
+              <FillColor r="0" g="157" b="141" />
+              <Shape shape="0" />
+              <Justification Justification="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1181" y="77" width="194" height="205" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="6">
+          <GuiSettings Plugin="Neo4jOutput">
+            <Position x="1266" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON>{"ConnStr":"http://local:7474","Username":"neo4j","Password":"","Database":"","UrlCollapsed":false,"ExportObject":"Node","BatchSize":10000,"NodeLabel":"Actor","NodeIdFields":[],"NodePropFields":["actor_name","num_of_appearances_in_top100_movies"],"RelLabel":"","RelIdFields":[],"RelPropFields":[],"RelLeftLabel":"","RelLeftFields":[],"RelRightLabel":"","RelRightFields":[]}</JSON>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="graphyx.dll" EngineDllEntryPoint="Neo4jOutput" />
+        </Node>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1206" y="126" width="144" height="48" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Create the Actor node</Text>
+              <Font name="Arial" size="11.25" style="1" />
+              <TextColor name="White" />
+              <FillColor r="0" g="157" b="141" />
+              <Shape shape="0" />
+              <Justification Justification="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="294" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="100" />
+          <Fields>
+            <Field name="Rank" />
+            <Field name="Movie Title" />
+            <Field name="Year" />
+            <Field name="Score" />
+            <Field name="Director" />
+            <Field name="Cast" />
+            <Field name="Critics Consensus" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1</c>
+              <c>His House</c>
+              <c>2020</c>
+              <c>100</c>
+              <c>Remi Weekes</c>
+              <c>Wunmi Mosaku, Sope Dirisu, Matt Smith, Cornell John</c>
+              <c>Featuring genuine scares through every corridor, His House is a terrifying look at the specters of the refugee experience and a stunning feature debut for Remi Weekes.</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>How to Train Your Dragon</c>
+              <c>2010</c>
+              <c>99</c>
+              <c>Christopher Sanders</c>
+              <c>Jay Baruchel, Gerard Butler, America Ferrera, Jonah Hill</c>
+              <c>Boasting dazzling animation, a script with surprising dramatic depth, and thrilling 3-D sequences, How to Train Your Dragon soars.</c>
+            </r>
+            <r>
+              <c>3</c>
+              <c>The Forty-Year-Old Version</c>
+              <c>2020</c>
+              <c>99</c>
+              <c>Radha Blank</c>
+              <c>Welker White, Reed Birney, Radha Blank, Peter Kim</c>
+              <c>The Forty-Year-Old Version opens a compelling window into the ebbs and flows of the artist's life -- and announces writer-director-star Radha Blank as a major filmmaking talent with her feature debut.</c>
+            </r>
+            <r>
+              <c>4</c>
+              <c>Under the Shadow</c>
+              <c>2016</c>
+              <c>99</c>
+              <c>Babak Anvari</c>
+              <c>Narges Rashidi, Avin Manshadi, Bobby Naderi, Ray Haratian</c>
+              <c>Under the Shadow deftly blends seemingly disparate genres to deliver an effective chiller with timely themes and thought-provoking social subtext.</c>
+            </r>
+            <r>
+              <c>5</c>
+              <c>Monty Python and the Holy Grail</c>
+              <c>1975</c>
+              <c>98</c>
+              <c>Terry Gilliam</c>
+              <c>Graham Chapman, John Cleese, Terry Gilliam, Eric Idle</c>
+              <c>A cult classic as gut-bustingly hilarious as it is blithely ridiculous, Monty Python and the Holy Grail has lost none of its exceedingly silly charm.</c>
+            </r>
+            <r>
+              <c>6</c>
+              <c>Ma Rainey's Black Bottom</c>
+              <c>2020</c>
+              <c>97</c>
+              <c>George C. Wolfe</c>
+              <c>Viola Davis, Chadwick Boseman, Glynn Turman, Colman Domingo</c>
+              <c>Framed by a pair of powerhouse performances, Ma Rainey's Black Bottom pays affectionate tribute to a blues legend -- and Black culture at large.</c>
+            </r>
+            <r>
+              <c>7</c>
+              <c>The Hurt Locker</c>
+              <c>2008</c>
+              <c>97</c>
+              <c>Kathryn Bigelow</c>
+              <c>Jeremy Renner, Anthony Mackie, Brian Geraghty, Guy Pearce</c>
+              <c>A well-acted, intensely shot, action filled war epic, Kathryn Bigelow's The Hurt Locker is thus far the best of the recent dramatizations of the Iraq War.</c>
+            </r>
+            <r>
+              <c>8</c>
+              <c>Hell or High Water</c>
+              <c>2016</c>
+              <c>97</c>
+              <c>David Mackenzie</c>
+              <c>Jeff Bridges, Chris Pine, Ben Foster, Gil Birmingham</c>
+              <c>Hell or High Water offers a solidly crafted, well-acted Western heist thriller that eschews mindless gunplay in favor of confident pacing and full-bodied characters.</c>
+            </r>
+            <r>
+              <c>9</c>
+              <c>Won't You Be My Neighbor?</c>
+              <c>2018</c>
+              <c>97</c>
+              <c>Morgan Neville</c>
+              <c>Joanne Rogers, Bill Isler, Hedda Sharapan, Margaret Whitmer</c>
+              <c>Won't You Be My Neighbor? takes a fittingly patient and honest look at the life and legacy of a television pioneer whose work has enriched generations.</c>
+            </r>
+            <r>
+              <c>10</c>
+              <c>Dolemite Is My Name</c>
+              <c>2019</c>
+              <c>97</c>
+              <c>Craig Brewer</c>
+              <c>Eddie Murphy, Wesley Snipes, Kodi Smit-McPhee, Keegan-Michael Key</c>
+              <c>In dramatizing Rudy Ray Moore's stranger-than-fiction story, Eddie Murphy makes Dolemite Is My Name just as bold, brash, and ultimately hard to resist as its subject.</c>
+            </r>
+            <r>
+              <c>11</c>
+              <c>Hunt for the Wilderpeople</c>
+              <c>2016</c>
+              <c>97</c>
+              <c>Taika Waititi</c>
+              <c>Sam Neill, Julian Dennison, Rima Te Wiata, Rachel House</c>
+              <c>The charmingly offbeat Hunt for the Wilderpeople unites a solid cast, a talented filmmaker, and a poignant, funny, deeply affecting message.</c>
+            </r>
+            <r>
+              <c>12</c>
+              <c>Mudbound</c>
+              <c>2017</c>
+              <c>97</c>
+              <c>Dee Rees</c>
+              <c>Carey Mulligan, Jason Clarke, Jason Mitchell, Mary J. Blige</c>
+              <c>Mudbound offers a well-acted, finely detailed snapshot of American history whose scenes of rural class struggle resonate far beyond their period setting.</c>
+            </r>
+            <r>
+              <c>13</c>
+              <c>I Lost My Body</c>
+              <c>2019</c>
+              <c>97</c>
+              <c>JÃ©rÃ©my Clapin</c>
+              <c>Hakim Faris, Victoire Du Bois, Patrick d'AssumÃ§ao, Belek Abdelmalek</c>
+              <c>Beautifully animated and utterly unique, I Lost My Body takes audiences on a singularly strange journey whose unexpected contours lead to a wholly satisfying destination.</c>
+            </r>
+            <r>
+              <c>14</c>
+              <c>Rocks</c>
+              <c>2019</c>
+              <c>97</c>
+              <c>Sarah Gavron</c>
+              <c>Bukky Bakray, Ruby Stokes, Sarah Niles, Layo-Christina Akinlude</c>
+              <c>A fresh, funny coming-of-age story rooted in realistic characters and anchored with a meaningful message, Rocks is as solid as its title suggests.</c>
+            </r>
+            <r>
+              <c>15</c>
+              <c>Roma</c>
+              <c>2018</c>
+              <c>96</c>
+              <c>Alfonso CuarÃ³n</c>
+              <c>Yalitza Aparicio, Marina de Tavira, Marco Graf, Fernando Grediaga</c>
+              <c>Roma finds writer-director Alfonso CuarÃ³n in complete, enthralling command of his visual craft - and telling the most powerfully personal story of his career.</c>
+            </r>
+            <r>
+              <c>16</c>
+              <c>Atlantics</c>
+              <c>2019</c>
+              <c>96</c>
+              <c>Mati Diop</c>
+              <c>Abdou Balde, Aminata Kane, Ibrahima Mbaye, Amadou Mbow</c>
+              <c>An unpredictable supernatural drama rooted in real-world social commentary, Atlantique suggests a thrillingly bright future for debuting filmmaker Mati Diop.</c>
+            </r>
+            <r>
+              <c>17</c>
+              <c>Psycho</c>
+              <c>1960</c>
+              <c>96</c>
+              <c>Alfred Hitchcock</c>
+              <c>Anthony Perkins, Janet Leigh, Vera Miles, John Gavin</c>
+              <c>Infamous for its shower scene, but immortal for its contribution to the horror genre. Because Psycho was filmed with tact, grace, and art, Hitchcock didn't just create modern horror, he validated it.</c>
+            </r>
+            <r>
+              <c>18</c>
+              <c>To All the Boys I've Loved Before</c>
+              <c>2018</c>
+              <c>96</c>
+              <c>Susan Johnson</c>
+              <c>Lana Condor, John Corbett, Noah Centineo, Emilija Baranac</c>
+              <c>To All the Boys I've Loved Before plays by the teen rom-com rules, but relatable characters and a thoroughly charming cast more than make up for a lack of surprises.</c>
+            </r>
+            <r>
+              <c>19</c>
+              <c>Life of Brian</c>
+              <c>1979</c>
+              <c>96</c>
+              <c>Terry Jones</c>
+              <c>Graham Chapman, John Cleese, Terry Gilliam, Terry Jones</c>
+              <c>One of the more cutting-edge films of the 1970s, this religious farce from the classic comedy troupe is as poignant as it is funny and satirical.</c>
+            </r>
+            <r>
+              <c>20</c>
+              <c>Outside In</c>
+              <c>2017</c>
+              <c>96</c>
+              <c>Lynn Shelton</c>
+              <c>Jay Duplass, Edie Falco, Kaitlyn Dever, Ben Schwartz</c>
+              <c>Brilliantly brought to life by tenderly empathetic performances from Jay Duplass and Edie Falco, Outside In tells a sobering -- yet thoroughly absorbing -- story.</c>
+            </r>
+            <r>
+              <c>21</c>
+              <c>The Irishman</c>
+              <c>2019</c>
+              <c>95</c>
+              <c>Martin Scorsese</c>
+              <c>Robert De Niro, Al Pacino, Joe Pesci, Anna Paquin</c>
+              <c>An epic gangster drama that earns its extended runtime, The Irishman finds Martin Scorsese revisiting familiar themes to poignant, funny, and profound effect.</c>
+            </r>
+            <r>
+              <c>22</c>
+              <c>Marriage Story</c>
+              <c>2019</c>
+              <c>95</c>
+              <c>Noah Baumbach</c>
+              <c>Scarlett Johansson, Adam Driver, Azhy Robertson, Laura Dern</c>
+              <c>Observing a splintering union with compassion and expansive grace, the powerfully acted Marriage Story ranks among writer-director Noah Baumbach's best works.</c>
+            </r>
+            <r>
+              <c>23</c>
+              <c>It Follows</c>
+              <c>2014</c>
+              <c>95</c>
+              <c>David Robert Mitchell</c>
+              <c>Maika Monroe, Keir Gilchrist, Daniel Zovatto, Jake Weary</c>
+              <c>Smart, original, and above all terrifying, It Follows is the rare modern horror film that works on multiple levels -- and leaves a lingering sting.</c>
+            </r>
+            <r>
+              <c>24</c>
+              <c>The Lord of the Rings: The Two Towers</c>
+              <c>2002</c>
+              <c>95</c>
+              <c>Peter Jackson</c>
+              <c>Elijah Wood, Ian McKellen, Liv Tyler, Viggo Mortensen</c>
+              <c>The Two Towers balances spectacular action with emotional storytelling, leaving audiences both wholly satisfied and eager for the final chapter.</c>
+            </r>
+            <r>
+              <c>25</c>
+              <c>Klaus</c>
+              <c>2019</c>
+              <c>95</c>
+              <c>Sergio Pablos</c>
+              <c>Jason Schwartzman, J.K. Simmons, Rashida Jones, Will Sasso</c>
+              <c>Beautiful hand-drawn animation and a humorous, heartwarming narrative make Klaus an instant candidate for holiday classic status.</c>
+            </r>
+            <r>
+              <c>26</c>
+              <c>Croupier</c>
+              <c>1998</c>
+              <c>95</c>
+              <c>Mike Hodges</c>
+              <c>Clive Owen, Kate Hardie, Alex Kingston, Gina McKee</c>
+              <c>The writer slumming for human truths and real experience is a common enough story, but this cool-headed and slick thriller provides a gut-churningly compelling backdrop to a look at our darker sides.</c>
+            </r>
+            <r>
+              <c>27</c>
+              <c>Call Me by Your Name</c>
+              <c>2017</c>
+              <c>94</c>
+              <c>Luca Guadagnino</c>
+              <c>Armie Hammer, TimothÃ©e Chalamet, Michael Stuhlbarg, Amira Casar</c>
+              <c>Call Me by Your Name offers a melancholy, powerfully affecting portrait of first love, empathetically acted by TimothÃ©e Chalamet and Armie Hammer.</c>
+            </r>
+            <r>
+              <c>28</c>
+              <c>The Power of the Dog</c>
+              <c>2021</c>
+              <c>94</c>
+              <c>Jane Campion</c>
+              <c>Benedict Cumberbatch, Kirsten Dunst, Jesse Plemons, Kodi Smit-McPhee</c>
+              <c>Brought to life by a stellar ensemble led by Benedict Cumberbatch, The Power of the Dog reaffirms writer-director Jane Campion as one of her generation's finest filmmakers.</c>
+            </r>
+            <r>
+              <c>29</c>
+              <c>Carol</c>
+              <c>2015</c>
+              <c>94</c>
+              <c>Todd Haynes</c>
+              <c>Cate Blanchett, Rooney Mara, Sarah Paulson, Jake Lacy</c>
+              <c>Shaped by Todd Haynes' deft direction and powered by a strong cast led by Cate Blanchett and Rooney Mara, Carol lives up to its groundbreaking source material.</c>
+            </r>
+            <r>
+              <c>30</c>
+              <c>Moneyball</c>
+              <c>2011</c>
+              <c>94</c>
+              <c>Bennett Miller</c>
+              <c>Brad Pitt, Jonah Hill, Philip Seymour Hoffman, Robin Wright</c>
+              <c>Director Bennett Miller, along with Brad Pitt and Jonah Hill, take a niche subject and turn it into a sharp, funny, and touching portrait worthy of baseball lore.</c>
+            </r>
+            <r>
+              <c>31</c>
+              <c>The Lost Daughter</c>
+              <c>2021</c>
+              <c>94</c>
+              <c>Maggie Gyllenhaal</c>
+              <c>Olivia Colman, Dakota Johnson, Peter Sarsgaard, Jessie Buckley</c>
+              <c>A strikingly assured debut for writer-director Maggie Gyllenhaal, The Lost Daughter unites a brilliant cast in service of a daringly ambitious story.</c>
+            </r>
+            <r>
+              <c>32</c>
+              <c>The Sea Beast</c>
+              <c>2022</c>
+              <c>94</c>
+              <c>Chris Williams</c>
+              <c>Karl Urban, Zaris-Angel Hator, Jared Harris, Dan Stevens</c>
+              <c>An original animated tale that's often as daring as its characters, The Sea Beast sends audiences on a voyage well worth taking.</c>
+            </r>
+            <r>
+              <c>33</c>
+              <c>Private Life</c>
+              <c>2018</c>
+              <c>94</c>
+              <c>Tamara Jenkins</c>
+              <c>Paul Giamatti, Kathryn Hahn, Kayli Carter, Molly Shannon</c>
+              <c>Private Life uses one couple's bumpy journey to take an affecting look at an easily identifiable - and too rarely dramatized - rite of adult passage.</c>
+            </r>
+            <r>
+              <c>34</c>
+              <c>Enola Holmes 2</c>
+              <c>2022</c>
+              <c>94</c>
+              <c>Harry Bradbeer</c>
+              <c>Millie Bobby Brown, Henry Cavill, Helena Bonham Carter, David Thewlis</c>
+              <c>Building on its predecessor with boisterously entertaining flair, Enola Holmes 2 solves the mystery of how to make a satisfying sequel -- and makes it look positively elementary.</c>
+            </r>
+            <r>
+              <c>35</c>
+              <c>The Birds</c>
+              <c>1963</c>
+              <c>94</c>
+              <c>Alfred Hitchcock</c>
+              <c>Rod Taylor, Tippi Hedren, Suzanne Pleshette, Jessica Tandy</c>
+              <c>Proving once again that build-up is the key to suspense, Alfred Hitchcock successfully turned birds into some of the most terrifying villains in horror history.</c>
+            </r>
+            <r>
+              <c>36</c>
+              <c>Captain Phillips</c>
+              <c>2013</c>
+              <c>93</c>
+              <c>Paul Greengrass</c>
+              <c>Tom Hanks, Catherine Keener, Barkhad Abdi, Barkhad Abdirahman</c>
+              <c>Smart, powerfully acted, and incredibly intense, Captain Phillips offers filmgoers a Hollywood biopic done right -- and offers Tom Hanks a showcase for yet another brilliant performance.</c>
+            </r>
+            <r>
+              <c>37</c>
+              <c>Spider-Man 2</c>
+              <c>2004</c>
+              <c>93</c>
+              <c>Sam Raimi</c>
+              <c>Tobey Maguire, Kirsten Dunst, James Franco, Alfred Molina</c>
+              <c>Boasting an entertaining villain and deeper emotional focus, this is a nimble sequel that improves upon the original.</c>
+            </r>
+            <r>
+              <c>38</c>
+              <c>The Lord of the Rings: The Return of the King</c>
+              <c>2003</c>
+              <c>93</c>
+              <c>Peter Jackson</c>
+              <c>Elijah Wood, Ian McKellen, Liv Tyler, Viggo Mortensen</c>
+              <c>Visually breathtaking and emotionally powerful,  The Lord of the Rings - The Return of the King is a moving and satisfying conclusion to a great trilogy.</c>
+            </r>
+            <r>
+              <c>39</c>
+              <c>The Meyerowitz Stories (New and Selected)</c>
+              <c>2017</c>
+              <c>93</c>
+              <c>Noah Baumbach</c>
+              <c>Adam Sandler, Ben Stiller, Dustin Hoffman, Emma Thompson</c>
+              <c>The Meyerowitz Stories (New and Selected) observes the family dynamic through writer-director Noah Baumbach's bittersweet lens and the impressive efforts of a remarkable cast.</c>
+            </r>
+            <r>
+              <c>40</c>
+              <c>Hustle</c>
+              <c>2022</c>
+              <c>93</c>
+              <c>Jeremiah Zagar</c>
+              <c>Adam Sandler, Juancho Hernangomez, Queen Latifah, Ben Foster</c>
+              <c>Hustle doesn't have any fancy moves, but it doesn't need them -- Adam Sandler's everyman charm makes this easy layup fun to watch.</c>
+            </r>
+            <r>
+              <c>41</c>
+              <c>Cam</c>
+              <c>2018</c>
+              <c>93</c>
+              <c>Daniel Goldhaber</c>
+              <c>Madeline Brewer, Patch Darragh, Melora Walters, Devin Druid</c>
+              <c>Smart and suspenseful, CAM is a techno-thriller that's far more than the sum of its salacious parts -- and an outstanding showcase for Madeline Brewer in the leading role.</c>
+            </r>
+            <r>
+              <c>42</c>
+              <c>Hush</c>
+              <c>2016</c>
+              <c>93</c>
+              <c>Mike Flanagan</c>
+              <c>John Gallagher Jr., Kate Siegel, Michael Trucco, Samantha Sloyan</c>
+              <c>Hush navigates the bloody waters of home invasion thrillers and incisive slashers for a contemporary horror puree.</c>
+            </r>
+            <r>
+              <c>43</c>
+              <c>Sand Storm</c>
+              <c>2016</c>
+              <c>93</c>
+              <c>Elite Zexer</c>
+              <c>Lamis Ammar, Ruba Blal, Hitham Omari, Khadija Al Akel</c>
+              <c>Sand Storm marks an impressive first feature for debuting writer-director Elite Zexer that offers a perceptive -- and crucial -- look at patriarchal traditions.</c>
+            </r>
+            <r>
+              <c>44</c>
+              <c>Glass Onion: A Knives Out Mystery</c>
+              <c>2022</c>
+              <c>92</c>
+              <c>Rian Johnson</c>
+              <c>Daniel Craig, Ed Norton, Dave Bautista, Kate Hudson</c>
+              <c>Glass Onion: A Knives Out Mystery brings back Benoit Blanc for another wildly entertaining mystery rounded out by an outstanding ensemble cast.</c>
+            </r>
+            <r>
+              <c>45</c>
+              <c>Skyfall</c>
+              <c>2012</c>
+              <c>92</c>
+              <c>Sam Mendes</c>
+              <c>Daniel Craig, Judi Dench, Javier Bardem, Ralph Fiennes</c>
+              <c>Sam Mendes brings Bond surging back with a smart, sexy, riveting action thriller that qualifies as one of the best 007 films to date.</c>
+            </r>
+            <r>
+              <c>46</c>
+              <c>Da 5 Bloods</c>
+              <c>2020</c>
+              <c>92</c>
+              <c>Spike Lee</c>
+              <c>Delroy Lindo, Jonathan Majors, Clarke Peters, Norm Lewis</c>
+              <c>Fierce energy and ambition course through Da 5 Bloods, coming together to fuel one of Spike Lee's most urgent and impactful films.</c>
+            </r>
+            <r>
+              <c>47</c>
+              <c>American Hustle</c>
+              <c>2013</c>
+              <c>92</c>
+              <c>David O. Russell</c>
+              <c>Christian Bale, Bradley Cooper, Jeremy Renner, Amy Adams</c>
+              <c>Riotously funny and impeccably cast, American Hustle compensates for its flaws with unbridled energy and some of David O. Russell's most irrepressibly vibrant direction.</c>
+            </r>
+            <r>
+              <c>48</c>
+              <c>The Bourne Ultimatum</c>
+              <c>2007</c>
+              <c>92</c>
+              <c>Paul Greengrass</c>
+              <c>Matt Damon, Julia Stiles, Joan Allen, David Strathairn</c>
+              <c>The Bourne Ultimatum is an intelligent, finely tuned non-stop thrill ride. Another strong performance from Matt Damon and sharp camerawork from Paul Greengrass make this the finest installment of the Bourne trilogy.</c>
+            </r>
+            <r>
+              <c>49</c>
+              <c>El Camino: A Breaking Bad Movie</c>
+              <c>2019</c>
+              <c>92</c>
+              <c>Vince Gilligan</c>
+              <c>Aaron Paul, Matt L. Jones, Charles Baker</c>
+              <c>Entertaining if not essential, El Camino adds a satisfying belated coda to the Breaking Bad story -- led by a career-best performance from Aaron Paul.</c>
+            </r>
+            <r>
+              <c>50</c>
+              <c>We the Animals</c>
+              <c>2018</c>
+              <c>92</c>
+              <c>Jeremiah Zagar</c>
+              <c>RaÃºl Castillo, Sheila Vand, Evan Rosado, Isaiah Kristian</c>
+              <c>Dreamlike and haunting, We the Animals approaches the coming-of-age odyssey with a uniquely documentarian eye.</c>
+            </r>
+            <r>
+              <c>51</c>
+              <c>The Little Prince</c>
+              <c>2015</c>
+              <c>92</c>
+              <c>Mark Osborne</c>
+              <c>Jeff Bridges, Rachel McAdams, James Franco, Marion Cotillard</c>
+              <c>Beautifully animated and faithful to the spirit of its classic source material, The Little Prince is a family-friendly treat that anchors thrilling visuals with a satisfying story.</c>
+            </r>
+            <r>
+              <c>52</c>
+              <c>Roald Dahl's Matilda the Musical</c>
+              <c>2022</c>
+              <c>92</c>
+              <c>Matthew Warchus</c>
+              <c>Alisha Weir, Emma Thompson, Lashana Lynch, Stephen Graham</c>
+              <c>Roald Dahl's Matilda the Musical brings the classic story back to the screen with a delightful Emma Thompson, dazzling dancing, and a suitably irascible take on the source material.</c>
+            </r>
+            <r>
+              <c>53</c>
+              <c>Rocky</c>
+              <c>1976</c>
+              <c>92</c>
+              <c>John G. Avildsen</c>
+              <c>Sylvester Stallone, Talia Shire, Burgess Meredith, Burt Young</c>
+              <c>This story of a down-on-his-luck boxer is thoroughly predictable, but Sylvester Stallone's script and stunning performance in the title role brush aside complaints.</c>
+            </r>
+            <r>
+              <c>54</c>
+              <c>Set It Up</c>
+              <c>2018</c>
+              <c>92</c>
+              <c>Claire Scanlon</c>
+              <c>Zoey Deutch, Glen Powell, Lucy Liu, Taye Diggs</c>
+              <c>Set It Up follows the long-established outlines of the rom-com template -- and in the process, proves there's still substantial pleasure to be wrought from familiar formulas.</c>
+            </r>
+            <r>
+              <c>55</c>
+              <c>Parenthood</c>
+              <c>1989</c>
+              <c>92</c>
+              <c>Ron Howard</c>
+              <c>Steve Martin, Mary Steenburgen, Dianne Wiest, Jason Robards</c>
+              <c>Bolstered by a delightful cast, Parenthood is a funny and thoughtfully crafted look at the best and worst moments of family life that resonates broadly.</c>
+            </r>
+            <r>
+              <c>56</c>
+              <c>Mindhorn</c>
+              <c>2016</c>
+              <c>92</c>
+              <c>Sean Foley</c>
+              <c>Julian Barratt, Essie Davis, Andrea Riseborough, Harriet Walter</c>
+              <c>Led by a committed performance from Julian Barratt, Mindhorn offers audiences a laugh-out-loud comedy whose sublime silliness is enhanced by its more thoughtful moments.</c>
+            </r>
+            <r>
+              <c>57</c>
+              <c>1922</c>
+              <c>2017</c>
+              <c>92</c>
+              <c>Zak Hilditch</c>
+              <c>Thomas Jane, Neal McDonough, Molly Parker, Brian d'Arcy James</c>
+              <c>Thanks to director Zak Hilditch's patient storytelling and strong work from lead Thomas Jane, 1922 ranks among the more satisfying Stephen King adaptations.</c>
+            </r>
+            <r>
+              <c>58</c>
+              <c>Uncorked</c>
+              <c>2020</c>
+              <c>92</c>
+              <c>Prentice Penny</c>
+              <c>Mamoudou Athie, Courtney B. Vance, Niecy Nash, Sasha CompÃ¨re</c>
+              <c>Like a good wine, once you let Uncorked breathe, its heartfelt tenderness will yield a sweet time.</c>
+            </r>
+            <r>
+              <c>59</c>
+              <c>La La Land</c>
+              <c>2016</c>
+              <c>91</c>
+              <c>Damien Chazelle</c>
+              <c>Ryan Gosling, Emma Stone, John Legend, Rosemarie DeWitt</c>
+              <c>La La Land breathes new life into a bygone genre with thrillingly assured direction, powerful performances, and an irresistible excess of heart.</c>
+            </r>
+            <r>
+              <c>60</c>
+              <c>Phantom Thread</c>
+              <c>2017</c>
+              <c>91</c>
+              <c>Paul Thomas Anderson</c>
+              <c>Daniel Day-Lewis, Vicky Krieps, Lesley Manville, Camilla Rutherford</c>
+              <c>Phantom Thread's finely woven narrative is filled out nicely by humor, intoxicating romantic tension, and yet another impressively committed performance from Daniel Day-Lewis.</c>
+            </r>
+            <r>
+              <c>61</c>
+              <c>The Nice Guys</c>
+              <c>2016</c>
+              <c>91</c>
+              <c>Shane Black</c>
+              <c>Russell Crowe, Ryan Gosling, Angourie Rice, Matt Bomer</c>
+              <c>The Nice Guys hearkens back to the buddy comedies of a bygone era while adding something extra courtesy of a knowing script and the irresistible chemistry of its leads.</c>
+            </r>
+            <r>
+              <c>62</c>
+              <c>Zero Dark Thirty</c>
+              <c>2012</c>
+              <c>91</c>
+              <c>Kathryn Bigelow</c>
+              <c>Jessica Chastain, Jason Clarke, Joel Edgerton, Jennifer Ehle</c>
+              <c>Gripping, suspenseful, and brilliantly crafted, Zero Dark Thirty dramatizes the hunt for Osama bin Laden with intelligence and an eye for detail.</c>
+            </r>
+            <r>
+              <c>63</c>
+              <c>The Lord of the Rings: The Fellowship of the Ring</c>
+              <c>2001</c>
+              <c>91</c>
+              <c>Peter Jackson</c>
+              <c>Elijah Wood, Ian McKellen, Liv Tyler, Viggo Mortensen</c>
+              <c>Full of eye-popping special effects, and featuring a pitch-perfect cast, The Lord of the Rings: The Fellowship of the Ring brings J.R.R. Tolkien's classic to vivid life.</c>
+            </r>
+            <r>
+              <c>64</c>
+              <c>Philomena</c>
+              <c>2013</c>
+              <c>91</c>
+              <c>Stephen Frears</c>
+              <c>Judi Dench, Steve Coogan, Michelle Fairley, Barbara Jefford</c>
+              <c>Based on a powerful true story and led by note-perfect performances from Judi Dench and Steve Coogan, Philomena offers a profoundly affecting drama for adult filmgoers of all ages.</c>
+            </r>
+            <r>
+              <c>65</c>
+              <c>The White Tiger</c>
+              <c>2021</c>
+              <c>91</c>
+              <c>Ramin Bahrani</c>
+              <c>Adarsh Gourav, Rajkummar Rao, Priyanka Chopra Jonas, Vedant Sinha</c>
+              <c>Well-acted and beautifully made, The White Tiger distills the strengths of its source material into a grimly compelling drama.</c>
+            </r>
+            <r>
+              <c>66</c>
+              <c>Beasts of No Nation</c>
+              <c>2015</c>
+              <c>91</c>
+              <c>Cary Joji Fukunaga</c>
+              <c>Idris Elba, Abraham Attah, Opeyemi Fagbohungbe, Kurt Egyiawan</c>
+              <c>Beasts of No Nation finds writer-director Cary Fukunaga working with a talented cast to offer a sobering, uncompromising, yet still somehow hopeful picture of war's human cost.</c>
+            </r>
+            <r>
+              <c>67</c>
+              <c>High Flying Bird</c>
+              <c>2019</c>
+              <c>91</c>
+              <c>Steven Soderbergh</c>
+              <c>AndrÃ© Holland, Zazie Beetz, Bill Duke, Sonja Sohn</c>
+              <c>High Flying Bird takes a thoughtful and engrossing look at professional sports that sees Steven Soderbergh continuing to test the limits of new filmmaking technology.</c>
+            </r>
+            <r>
+              <c>68</c>
+              <c>Apollo 10 1/2: A Space Age Childhood</c>
+              <c>2022</c>
+              <c>91</c>
+              <c>Richard Linklater</c>
+              <c>Jack Black, Bill Wise, Lee Eddy, Milo Coy</c>
+              <c>The sweetly nostalgic Apollo 10 1/2: A Space Age Childhood finds Richard Linklater reusing visual and thematic ingredients in a deeply personal, freshly inspired way.</c>
+            </r>
+            <r>
+              <c>69</c>
+              <c>Happy as Lazzaro</c>
+              <c>2018</c>
+              <c>91</c>
+              <c>Alice Rohrwacher</c>
+              <c>Adriano Tardiolo, Alba Rohrwacher, Agnese Graziani, Tommaso Ragno</c>
+              <c>Happy as Lazzaro uses a friendship's ups and downs as a satisfyingly expansive canvas for a picture rich with thematic and cinematic depth.</c>
+            </r>
+            <r>
+              <c>70</c>
+              <c>Full Metal Jacket</c>
+              <c>1987</c>
+              <c>91</c>
+              <c>Stanley Kubrick</c>
+              <c>Matthew Modine, Adam Baldwin, Vincent D'Onofrio, R. Lee Ermey</c>
+              <c>Intense, tightly constructed, and darkly comic at times, Stanley Kubrick's Full Metal Jacket may not boast the most original of themes, but it is exceedingly effective at communicating them.</c>
+            </r>
+            <r>
+              <c>71</c>
+              <c>Gerald's Game</c>
+              <c>2017</c>
+              <c>91</c>
+              <c>Mike Flanagan</c>
+              <c>Carla Gugino, Bruce Greenwood, Henry Thomas, Carel Struycken</c>
+              <c>Carla Gugino carries Gerald's Game's small-scale suspense with a career-defining performance.</c>
+            </r>
+            <r>
+              <c>72</c>
+              <c>When Harry Met Sally...</c>
+              <c>1989</c>
+              <c>91</c>
+              <c>Rob Reiner</c>
+              <c>Billy Crystal, Meg Ryan, Carrie Fisher, Bruno Kirby</c>
+              <c>Rob Reiner's touching, funny film set a new standard for romantic comedies, and he was ably abetted by the sharp interplay between Billy Crystal and Meg Ryan.</c>
+            </r>
+            <r>
+              <c>73</c>
+              <c>The Willoughbys</c>
+              <c>2020</c>
+              <c>91</c>
+              <c>Kris Pearn</c>
+              <c>Will Forte, Maya Rudolph, Alessia Cara, Terry Crews</c>
+              <c>An appealing animated adventure whose silliness is anchored in genuine emotion, The Willoughbys offers fanciful fun the entire family can enjoy.</c>
+            </r>
+            <r>
+              <c>74</c>
+              <c>National Lampoon's Animal House</c>
+              <c>1978</c>
+              <c>91</c>
+              <c>John Landis</c>
+              <c>John Belushi, Kevin Bacon, Donald Sutherland, Karen Allen</c>
+              <c>The talents of director John Landis and Saturday Night Live's irrepressible John Belushi conspired to create a rambunctious, subversive college comedy that continues to resonate.</c>
+            </r>
+            <r>
+              <c>75</c>
+              <c>Up in the Air</c>
+              <c>2009</c>
+              <c>90</c>
+              <c>Jason Reitman</c>
+              <c>George Clooney, Vera Farmiga, Anna Kendrick, Jason Bateman</c>
+              <c>Led by charismatic performances by its three leads, director Jason Reitman delivers a smart blend of humor and emotion with just enough edge for mainstream audiences.</c>
+            </r>
+            <r>
+              <c>76</c>
+              <c>The Imitation Game</c>
+              <c>2014</c>
+              <c>90</c>
+              <c>Morten Tyldum</c>
+              <c>Benedict Cumberbatch, Keira Knightley, Matthew Goode, Rory Kinnear</c>
+              <c>With an outstanding starring performance from Benedict Cumberbatch illuminating its fact-based story, The Imitation Game serves as an eminently well-made entry in the "prestige biopic" genre.</c>
+            </r>
+            <r>
+              <c>77</c>
+              <c>Minority Report</c>
+              <c>2002</c>
+              <c>90</c>
+              <c>Steven Spielberg</c>
+              <c>Tom Cruise, Colin Farrell, Samantha Morton, Max von Sydow</c>
+              <c>Thought-provoking and visceral, Steven Spielberg successfully combines high concept ideas and high octane action in this fast and febrile sci-fi thriller.</c>
+            </r>
+            <r>
+              <c>78</c>
+              <c>Spider-Man</c>
+              <c>2002</c>
+              <c>90</c>
+              <c>Sam Raimi</c>
+              <c>Tobey Maguire, Willem Dafoe, Kirsten Dunst, James Franco</c>
+              <c>Not only does Spider-Man provide a good dose of web-swinging fun, it also has a heart, thanks to the combined charms of director Sam Raimi and star Tobey Maguire.</c>
+            </r>
+            <r>
+              <c>79</c>
+              <c>The Two Popes</c>
+              <c>2019</c>
+              <c>90</c>
+              <c>Fernando Meirelles</c>
+              <c>Jonathan Pryce, Anthony Hopkins, Juan MinujÃ­n, Sidney Cole</c>
+              <c>Led by outstanding performances from its well-matched leads, The Two Popes draws absorbing drama from a pivotal moment in modern organized religion.</c>
+            </r>
+            <r>
+              <c>80</c>
+              <c>The Kindergarten Teacher</c>
+              <c>2018</c>
+              <c>90</c>
+              <c>Sara Colangelo</c>
+              <c>Maggie Gyllenhaal, Gael GarcÃ­a Bernal, Michael Chernus, Anna Baryshnikov</c>
+              <c>Elevated by a bravura performance from Maggie Gyllenhaal, The Kindergarten Teacher is one American remake that retains its impact the second time around.</c>
+            </r>
+            <r>
+              <c>81</c>
+              <c>Reservoir Dogs</c>
+              <c>1992</c>
+              <c>90</c>
+              <c>Quentin Tarantino</c>
+              <c>Harvey Keitel, Tim Roth, Michael Madsen, Chris Penn</c>
+              <c>Thrumming with intelligence and energy, Reservoir Dogs opens Quentin Tarantino's filmmaking career with hard-hitting style.</c>
+            </r>
+            <r>
+              <c>82</c>
+              <c>On Body and Soul</c>
+              <c>2017</c>
+              <c>90</c>
+              <c>IldikÃ³ Enyedi</c>
+              <c>GÃ©za MorcsÃ¡nyi, Alexandra BorbÃ©ly, ZoltÃ¡n Schneider, Ervin Nagy</c>
+              <c>Tender performances and a strong sense of style combine to create an eccentric, dreamy portrait of love and loneliness in On Body and Soul.</c>
+            </r>
+            <r>
+              <c>83</c>
+              <c>The Bridges of Madison County</c>
+              <c>1995</c>
+              <c>90</c>
+              <c>Clint Eastwood</c>
+              <c>Clint Eastwood, Meryl Streep, Annie Corley, Victor Slezak</c>
+              <c>Sentimental, slow, schmaltzy, and very satisfying, The Bridges of Madison County finds Clint Eastwood adapting a bestseller with heft, wit, and grace.</c>
+            </r>
+            <r>
+              <c>84</c>
+              <c>The Trial of the Chicago 7</c>
+              <c>2020</c>
+              <c>89</c>
+              <c>Aaron Sorkin</c>
+              <c>Eddie Redmayne, Alex Sharp, Sacha Baron Cohen, Jeremy Strong</c>
+              <c>An actors' showcase enlivened by its topical fact-based story, The Trial of the Chicago 7 plays squarely -- and compellingly -- to Aaron Sorkin's strengths.</c>
+            </r>
+            <r>
+              <c>85</c>
+              <c>Zombieland</c>
+              <c>2009</c>
+              <c>89</c>
+              <c>Ruben Fleischer</c>
+              <c>Woody Harrelson, Jesse Eisenberg, Emma Stone, Abigail Breslin</c>
+              <c>Wickedly funny and featuring plenty of gore, Zombieland is proof that the zombie subgenre is far from dead.</c>
+            </r>
+            <r>
+              <c>86</c>
+              <c>The Ballad of Buster Scruggs</c>
+              <c>2018</c>
+              <c>89</c>
+              <c>Joel Coen</c>
+              <c>Tim Blake Nelson, Willie Watson, David Krumholtz, James Franco</c>
+              <c>The Ballad of Buster Scruggs avoids anthology pitfalls with a consistent collection tied together by the Coen brothers' signature blend of dark drama and black humor.</c>
+            </r>
+            <r>
+              <c>87</c>
+              <c>All Quiet on the Western Front</c>
+              <c>2022</c>
+              <c>90</c>
+              <c>Edward Berger</c>
+              <c>Felix Kammerer, Albrecht Schuch, Aaron Hilmer, Moritz Klaus</c>
+              <c>Both timely and timeless, All Quiet on the Western Front retains the power of its classic source material by focusing on the futility of war.</c>
+            </r>
+            <r>
+              <c>88</c>
+              <c>Always Be My Maybe</c>
+              <c>2019</c>
+              <c>89</c>
+              <c>Nahnatchka Khan</c>
+              <c>Ali Wong, Randall Park, Keanu Reeves, Michelle Buteau</c>
+              <c>Carried by the infectious charms of Ali Wong and Randall Park, Always Be My Maybe takes familiar rom-com beats and cleverly layers in smart social commentary to find its own sweet groove.</c>
+            </r>
+            <r>
+              <c>89</c>
+              <c>I Am Mother</c>
+              <c>2019</c>
+              <c>89</c>
+              <c>Grant Sputore</c>
+              <c>Hilary Swank, Clara Rugaard, Rose Byrne, Tahlia Sturzaker</c>
+              <c>Suspenseful, well-acted, and intelligent, I Am Mother is an ambitious sci-fi story that largely achieves its impressive aims.</c>
+            </r>
+            <r>
+              <c>90</c>
+              <c>I Don't Feel at Home in This World Anymore</c>
+              <c>2017</c>
+              <c>89</c>
+              <c>Macon Blair</c>
+              <c>Melanie Lynskey, Elijah Wood, David Yow, Jane Levy</c>
+              <c>I don't feel at home in this world anymore. transcends its unwieldy title to offer timely, intoxicatingly dark observations on gender dynamics and social norms in modern America.</c>
+            </r>
+            <r>
+              <c>91</c>
+              <c>Paddleton</c>
+              <c>2019</c>
+              <c>89</c>
+              <c>Alexandre Lehmann</c>
+              <c>Mark Duplass, Ray Romano, Marguerite Moreau, Christine Woods</c>
+              <c>It takes its time coming together, but the quietly effective Paddleton pulls off a tricky tonal balancing act, thanks largely to the strengths of its well-chosen leads.</c>
+            </r>
+            <r>
+              <c>92</c>
+              <c>Rango</c>
+              <c>2011</c>
+              <c>88</c>
+              <c>Gore Verbinski</c>
+              <c>Johnny Depp, Isla Fisher, Abigail Breslin, Ned Beatty</c>
+              <c>Rango is a smart, giddily creative burst of beautifully animated entertainment, and Johnny Depp gives a colorful vocal performance as a household pet in an unfamiliar world.</c>
+            </r>
+            <r>
+              <c>93</c>
+              <c>The Bad Guys</c>
+              <c>2022</c>
+              <c>88</c>
+              <c>Pierre Perifel</c>
+              <c>Sam Rockwell, Zazie Beetz, Marc Maron, Awkwafina</c>
+              <c>Fast-paced, funny, and full of colorful visual appeal, The Bad Guys is good news for audiences seeking options the whole family can enjoy.</c>
+            </r>
+            <r>
+              <c>94</c>
+              <c>Dope</c>
+              <c>2015</c>
+              <c>88</c>
+              <c>Rick Famuyiwa</c>
+              <c>Shameik Moore, Tony Revolori, Kiersey Clemons, Kimberly Elise</c>
+              <c>Featuring a starmaking performance from Shameik Moore and a refreshingly original point of view from writer-director Rick Famuyiwa, Dope is smart, insightful entertainment.</c>
+            </r>
+            <r>
+              <c>95</c>
+              <c>Oxygen</c>
+              <c>2021</c>
+              <c>88</c>
+              <c>Alexandre Aja</c>
+              <c>MÃ©lanie Laurent, Mathieu Amalric, Malik Zidi, Marc Saez</c>
+              <c>Oxygen gets the white-knuckle maximum out of its claustrophobic setting, with director Alexandre Aja and star MÃ©lanie Laurent making this a must-watch thriller for sci-fi fans.</c>
+            </r>
+            <r>
+              <c>96</c>
+              <c>Fear Street Part Three: 1666</c>
+              <c>2021</c>
+              <c>88</c>
+              <c>Leigh Janiak</c>
+              <c>Kiana Madeira, Ashley Zukerman, Gillian Jacobs, Olivia Welch</c>
+              <c>Fear Street Part Three: 1666 sends the slasher series back in time for a trilogy-concluding installment that caps things off on a screaming high note.</c>
+            </r>
+            <r>
+              <c>97</c>
+              <c>Donnie Brasco</c>
+              <c>1997</c>
+              <c>88</c>
+              <c>Mike Newell</c>
+              <c>Al Pacino, Johnny Depp, Michael Madsen, Bruno Kirby</c>
+              <c>A stark, nuanced portrait of life in organized crime, bolstered by strong performances from Al Pacino and Johnny Depp.</c>
+            </r>
+            <r>
+              <c>98</c>
+              <c>Inception</c>
+              <c>2010</c>
+              <c>87</c>
+              <c>Christopher Nolan</c>
+              <c>Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy</c>
+              <c>Smart, innovative, and thrilling, Inception is that rare summer blockbuster that succeeds viscerally as well as intellectually.</c>
+            </r>
+            <r>
+              <c>99</c>
+              <c>American Beauty</c>
+              <c>1999</c>
+              <c>87</c>
+              <c>Sam Mendes</c>
+              <c>Kevin Spacey, Annette Bening, Thora Birch, Wes Bentley</c>
+              <c>Flawlessly cast and brimming with dark, acid wit, American Beauty is a smart, provocative high point of late '90s mainstream Hollywood film.</c>
+            </r>
+            <r>
+              <c>100</c>
+              <c>Kung Fu Panda</c>
+              <c>2008</c>
+              <c>87</c>
+              <c>John Stevenson</c>
+              <c>Jack Black, Angelina Jolie, Jackie Chan, David Cross</c>
+              <c>Kung Fu Panda has a familiar message, but the pleasing mix of humor, swift martial arts action, and colorful animation makes for winning Summer entertainment.</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="234" y="234" width="648" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Data has been downloaded from: https://www.kaggle.com/datasets/r1shabhgupta/best-movies-on-netflix?resource=download</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="18" y="102" width="312" height="23" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Workflow Version</Text>
+          <Font name="Arial" size="14.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="18" y="126" width="312" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>v1.0</Text>
+          <Font name="Arial" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="18" y="162" width="312" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Author</Text>
+          <Font name="Arial" size="14.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="18" y="186" width="312" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Natalia Miteva</Text>
+          <Font name="Arial" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1181" y="509" width="194" height="217" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="13">
+          <GuiSettings Plugin="Neo4jOutput">
+            <Position x="1242" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON>{"ConnStr":"http://local:7474","Username":"neo4j","Password":"","Database":"","UrlCollapsed":false,"ExportObject":"Node","BatchSize":10000,"NodeLabel":"Director","NodeIdFields":[],"NodePropFields":["director_name","num_of_top100_movies_directed"],"RelLabel":"","RelIdFields":[],"RelPropFields":[],"RelLeftLabel":"","RelLeftFields":[],"RelRightLabel":"","RelRightFields":[]}</JSON>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="graphyx.dll" EngineDllEntryPoint="Neo4jOutput" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1206" y="558" width="144" height="48" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Create the Director node</Text>
+              <Font name="Arial" size="11.25" style="1" />
+              <TextColor name="White" />
+              <FillColor r="0" g="157" b="141" />
+              <Shape shape="0" />
+              <Justification Justification="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1397" y="77" width="206" height="205" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="15">
+          <GuiSettings Plugin="Neo4jOutput">
+            <Position x="1470" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON>{"ConnStr":"http://local:7474","Username":"neo4j","Password":"","Database":"","UrlCollapsed":false,"ExportObject":"Relationship","BatchSize":10000,"NodeLabel":"Director","NodeIdFields":[],"NodePropFields":["name","num_of_top100_movies_directed"],"RelLabel":"ACTED_IN","RelIdFields":[],"RelPropFields":[],"RelLeftLabel":"Actor","RelLeftFields":[{"actor_name":"actor_name"}],"RelRightLabel":"Movie","RelRightFields":[{"title":"title"}]}</JSON>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="graphyx.dll" EngineDllEntryPoint="Neo4jOutput" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1422" y="126" width="156" height="48" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Create Actor -&gt; Movie relationship</Text>
+              <Font name="Arial" size="11.25" style="1" />
+              <TextColor name="White" />
+              <FillColor r="0" g="157" b="141" />
+              <Shape shape="0" />
+              <Justification Justification="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output26" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Alteryx + Neo4j</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="d46bfd32-06f6-404b-9724-d61a2f9f8865" />
+      <Telemetry>
+        <PreviousWorkflowId value="b2a0a032-59b8-492e-8a0d-f35f5efe7550" />
+        <OriginWorkflowId value="427d094f-7648-4eaf-aee7-f7aa9b800843" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
